@@ -1,0 +1,1747 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://predecessor-api.github.io/docs/endpoints/items/mapping/">
+      
+      
+        <link rel="prev" href="../../matches/by-player-id/">
+      
+      
+        <link rel="next" href="../information/">
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Item Mapping - Predecessor API Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#item-mapping" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Predecessor API Docs" class="md-header__button md-logo" aria-label="Predecessor API Docs" data-md-component="logo">
+      
+  <img src="../../../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Predecessor API Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Item Mapping
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/predecessor-api/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    predecessor-api/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Predecessor API Docs" class="md-nav__button md-logo" aria-label="Predecessor API Docs" data-md-component="logo">
+      
+  <img src="../../../img/favicon.ico" alt="logo">
+
+    </a>
+    Predecessor API Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/predecessor-api/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    predecessor-api/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Endpoints
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Endpoints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Matches
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Matches
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../matches/by-epoch/" class="md-nav__link">
+        Matches by Epoch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../matches/by-id/" class="md-nav__link">
+        Match by ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../matches/by-player-id/" class="md-nav__link">
+        Matches by Player ID
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          Items
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Items
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Item Mapping
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../information/" class="md-nav__link">
+        Item Information
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Heroes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Heroes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heroes/by-codename/" class="md-nav__link">
+        Hero by Codename
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../models/match/" class="md-nav__link">
+        Match
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="item-mapping">Item Mapping</h1>
+<div class="highlight"><pre><span></span><code>{baseURL}/item-mapping/
+</code></pre></div>
+<p>Returns the ItemID -&gt; ItemName mapping.</p>
+<p><strong>Note: Not yet implemented</strong></p>
+<p>We do have a JSON string that was shared in the Predecessor Discord's <code>#public-api</code> channel, though, as an array of objects.</p>
+<p>There's also a hand-curated key:value JSON string as an object of just ItemID -&gt; ItemName.</p>
+<details>
+  <summary>Show JSON (array of object, official from Discord)</summary>
+
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Malediction&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200606&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Anti-Physical&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brutallax&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200303&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Remove Disables&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StrengthTonic&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100010&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StaminaTonic&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100008&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProtectionTonic&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100005&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IntellectTonic&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100003&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RefillablePotion&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100006&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hunt&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300005&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ConsortCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200601&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deal Damage when Near Allies to earn gold and evolve into &quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RogueCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200201&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land Abilities and Kill Enemies to evolve into &quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AssassinCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200202&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MarksmanCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200101&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land Basic Attacks and Kill Enemies to evolve into &quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SharpshooterCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200102&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WarriorCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200301&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deal Damage and Kill Enemies to evolve into &quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ChampionCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200302&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MagicianCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200401&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land Abilities and Kill Enemies to evolve into &quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OccultCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200402&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land Abilities and Kill Enemies to evolve into &quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WarlockCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200404&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GuardianCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200602&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deal Damage when Near Allies to earn gold and evolve into &quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WizardCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200403&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;KeeperCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200603&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TitanCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200501&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Receive Damage and Kill Enemies to evolve into &quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WardenCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200604&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GoliathCrest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200502&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WildHunt&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300005&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Solstone&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400601&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StealthWard&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100009&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sentry&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100007&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Epoch&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200405&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Survive Burst&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obelisk&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200406&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enhances Basics&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Soulbearer&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200407&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Survive Burst&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tempest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200408&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Area Damage&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RiftWalkers&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200607&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Initiation&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Codex&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ChronomaticWand&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400008&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SpiritBeads&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300014&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DuskStave&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400014&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AstralCatalyst&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500401&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PotentStaff&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300009&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Scepter&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300011&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ScaldingSceptre&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400030&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Caustica&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500403&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DiffusalCane&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400012&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Combustion&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500404&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VitalityBeads&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300016&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TenaciousDrape&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400038&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dreambinder&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500405&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Megacosm&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500409&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SpellSlasher&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300013&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VioletBrooch&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400039&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Oathkeeper&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500410&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OblivionCrown&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500411&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wraps&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300017&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NullifyingMask&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400023&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spellbreaker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500413&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SpikedBirch&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400033&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedScepter&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500415&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VoidCrystal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400040&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WorldBreaker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500416&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WraithLeggings&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500417&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tunic&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300015&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AbyssalBracers&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GolemsGift&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500418&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IceskornTalons&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200305&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dueling&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sabre&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300010&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shortsword&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300012&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RuthlessBroadsword&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400028&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basilisk&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500302&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FortifiedMantle&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400016&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Citadel&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500516&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TemporalRipper&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400037&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Draconum&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500304&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BarbedPauldron&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400004&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CeruleanStone&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400017&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frostguard&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500505&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HeroicGuard&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400019&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Legacy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500306&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BloodTome&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400005&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lifebinder&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500407&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bloodlust&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400042&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mutilator&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500307&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Longbow&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300007&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CompositeBow&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400010&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Prophecy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500412&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnergyStream&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300003&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DivineWreath&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400013&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HallowedBraid&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400018&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Requiem&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500607&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Greatsword&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300004&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BandedEmerald&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400002&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Salvation&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500310&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SerratedBlade&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400031&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedBlade&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300308&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EssenceRing&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400015&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Timewarp&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500608&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vanguardian&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500610&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SteelMail&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400035&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WardensFaith&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500515&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TimeFluxBand&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200409&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Time Travel&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Typhoon&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200410&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mobility&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Leafsong&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200605&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enhance Mobility&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AlchemicalRod&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400027&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AzureCore&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500402&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dynamo&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500502&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Elafrost&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500603&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PolarTreads&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400024&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GalaxyGreaves&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500506&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HexboundBracers&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500508&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ChaoticCore&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400007&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RuneBow&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400042&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Magnify&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500408&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ortus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200204&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Multi-kill&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pacifier&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200105&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mobility&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Crossbow&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300002&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZealousTomahawk&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400041&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ashbringer&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500101&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HonedKris&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400020&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Malady&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500201&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DemonEdge&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500202&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mesmer&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500203&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deathstalker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500204&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Imperator&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500104&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dread&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500205&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IronwoodWarbow&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400022&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RobustArbalest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400026&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LightningHawk&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500106&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Viper&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500108&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Omen&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500208&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Absolution&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500110&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RavenousRapier&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400025&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SkySplitter&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500111&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StormBreaker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500112&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedRounds&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500113&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ThePerforator&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500210&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vanquisher&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500211&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nex&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200203&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Burst Damage&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Witchstalker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200205&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Remove Disables&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Breach&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500102&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TectonicMallet&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500507&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BarbaricCleaver&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400003&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mindrazor&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500206&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nightfall&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500207&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Painweaver&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500209&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Silentium&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200609&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Anti-Magical&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Marshal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500605&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TruesilverBracelet&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500609&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Augmentation&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500301&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Claymore&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400009&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bonesaw&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500303&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CrystallineCuirass&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500501&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brimstone&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400006&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FireBlossom&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500503&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FluxMatrix&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500504&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Infernum&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500305&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Overlord&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500309&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LifeStream&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300006&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StalwartGauntlets&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400034&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RaimentOfRenewal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500511&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stonewall&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500512&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HornedPlate&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400021&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedGuard&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500510&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VoidHelm&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500514&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UnbrokenWill&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500513&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Liberator&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200104&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Remove Disables&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DustDevil&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500103&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CrimsonEdge&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400011&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Terminus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500114&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Demolisher&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500115&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kingsbane&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500105&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Eviscerator&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200103&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Anti-Tank&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fenix&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200304&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Revive&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NyrWarboots&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200503&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Initiation&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SaphirsMantle&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200505&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Durability&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wellspring&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500601&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedTotem&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500606&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SoulChalice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400032&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reckoning&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500109&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tranquility&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200610&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Heal Allies&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CrystalTear&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500602&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Razorback&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200504&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reflect Damage&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LochShawl&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;400036&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Leviathan&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500509&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sanctification&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200608&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;item_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Survive Burst&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+
+</details>
+
+<details>
+  <summary>Show JSON (hand-curated key:value object)</summary>
+<br/>
+<strong>NOTE: This JSON omits two duplicate keys:</strong>
+
+<ul>
+  <li>"300005": "WildHunt", // duplicate ID with "Hunt"</li>
+  <li>"400042": "RuneBow", // duplicate ID with "Bloodlust"</li>
+</ul>
+
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;100003&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IntellectTonic&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;100005&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProtectionTonic&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;100006&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RefillablePotion&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;100007&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sentry&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;100008&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StaminaTonic&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;100009&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StealthWard&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;100010&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StrengthTonic&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200101&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MarksmanCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200102&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SharpshooterCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200103&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Eviscerator&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200104&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Liberator&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200105&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Pacifier&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200201&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RogueCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200202&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AssassinCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200203&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nex&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200204&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ortus&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200205&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Witchstalker&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200301&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WarriorCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200302&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ChampionCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200303&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brutallax&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200304&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fenix&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200305&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IceskornTalons&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200401&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MagicianCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200402&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OccultCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200403&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WizardCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200404&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WarlockCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200405&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Epoch&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200406&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obelisk&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200407&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Soulbearer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200408&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tempest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200409&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TimeFluxBand&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200410&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Typhoon&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200501&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TitanCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200502&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GoliathCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200503&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NyrWarboots&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200504&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Razorback&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200505&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SaphirsMantle&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ConsortCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200602&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GuardianCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200603&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;KeeperCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200604&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WardenCrest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200605&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Leafsong&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200606&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Malediction&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200607&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RiftWalkers&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200608&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sanctification&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200609&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Silentium&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;200610&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tranquility&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300001&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Codex&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300002&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Crossbow&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300003&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EnergyStream&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300004&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Greatsword&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300005&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hunt&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300006&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LifeStream&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300007&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Longbow&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300009&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PotentStaff&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300010&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sabre&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300011&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Scepter&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300012&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shortsword&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300013&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SpellSlasher&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300014&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SpiritBeads&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300015&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tunic&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300016&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VitalityBeads&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300017&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wraps&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;300308&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedBlade&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400001&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AbyssalBracers&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400002&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BandedEmerald&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400003&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BarbaricCleaver&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400004&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BarbedPauldron&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400005&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BloodTome&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400006&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brimstone&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400007&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ChaoticCore&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400008&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ChronomaticWand&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400009&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Claymore&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400010&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CompositeBow&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400011&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CrimsonEdge&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400012&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DiffusalCane&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400013&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DivineWreath&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400014&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DuskStave&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400015&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EssenceRing&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400016&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FortifiedMantle&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400017&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CeruleanStone&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400018&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HallowedBraid&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400019&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HeroicGuard&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400020&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HonedKris&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400021&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HornedPlate&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400022&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IronwoodWarbow&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400023&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NullifyingMask&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400024&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PolarTreads&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400025&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RavenousRapier&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400026&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RobustArbalest&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400027&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AlchemicalRod&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400028&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RuthlessBroadsword&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400030&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ScaldingSceptre&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400031&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SerratedBlade&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400032&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SoulChalice&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400033&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SpikedBirch&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400034&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StalwartGauntlets&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400035&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SteelMail&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400036&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LochShawl&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400037&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TemporalRipper&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400038&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TenaciousDrape&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400039&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VioletBrooch&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400040&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VoidCrystal&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400041&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZealousTomahawk&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400042&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bloodlust&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;400601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Solstone&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500101&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ashbringer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500102&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Breach&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500103&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DustDevil&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500104&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Imperator&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500105&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kingsbane&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500106&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LightningHawk&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500108&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Viper&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500109&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reckoning&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500110&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Absolution&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500111&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SkySplitter&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500112&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StormBreaker&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500113&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedRounds&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500114&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Terminus&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500115&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Demolisher&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500201&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Malady&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500202&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DemonEdge&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500203&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mesmer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500204&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deathstalker&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500205&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dread&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500206&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mindrazor&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500207&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nightfall&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500208&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Omen&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500209&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Painweaver&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500210&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ThePerforator&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500211&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vanquisher&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500301&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Augmentation&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500302&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basilisk&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500303&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bonesaw&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500304&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Draconum&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500305&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Infernum&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500306&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Legacy&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500307&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mutilator&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500309&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Overlord&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500310&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Salvation&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500401&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AstralCatalyst&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500402&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AzureCore&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500403&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Caustica&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500404&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Combustion&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500405&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dreambinder&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500407&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lifebinder&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500408&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Magnify&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500409&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Megacosm&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500410&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Oathkeeper&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500411&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OblivionCrown&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500412&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Prophecy&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500413&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spellbreaker&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500415&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedScepter&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500416&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WorldBreaker&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500417&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WraithLeggings&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500418&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GolemsGift&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500501&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CrystallineCuirass&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500502&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dynamo&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500503&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FireBlossom&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500504&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FluxMatrix&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500505&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frostguard&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500506&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GalaxyGreaves&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500507&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TectonicMallet&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500508&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HexboundBracers&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500509&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Leviathan&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500510&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedGuard&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500511&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RaimentOfRenewal&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500512&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stonewall&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500513&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UnbrokenWill&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500514&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VoidHelm&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500515&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WardensFaith&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500516&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Citadel&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500601&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wellspring&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500602&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CrystalTear&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500603&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Elafrost&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500605&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Marshal&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500606&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaintedTotem&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500607&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Requiem&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500608&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Timewarp&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500609&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TruesilverBracelet&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;500610&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vanguardian&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

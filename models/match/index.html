@@ -1,0 +1,919 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://predecessor-api.github.io/docs/models/match/">
+      
+      
+        <link rel="prev" href="../../endpoints/heroes/by-codename/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Match - Predecessor API Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#match" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Predecessor API Docs" class="md-header__button md-logo" aria-label="Predecessor API Docs" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Predecessor API Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Match
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/predecessor-api/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    predecessor-api/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Predecessor API Docs" class="md-nav__button md-logo" aria-label="Predecessor API Docs" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    Predecessor API Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/predecessor-api/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    predecessor-api/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Endpoints
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Endpoints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Matches
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Matches
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/matches/by-epoch/" class="md-nav__link">
+        Matches by Epoch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/matches/by-id/" class="md-nav__link">
+        Match by ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/matches/by-player-id/" class="md-nav__link">
+        Matches by Player ID
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          Items
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Items
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/items/mapping/" class="md-nav__link">
+        Item Mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/items/information/" class="md-nav__link">
+        Item Information
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Heroes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Heroes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/heroes/by-codename/" class="md-nav__link">
+        Hero by Codename
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Match
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="match">Match</h1>
+<p>Fields omitted:</p>
+<ul>
+<li>server - always empty</li>
+<li>players - always empty, leftover from early API tests</li>
+<li>Namespace - recent addition, it's value is always "PRED"</li>
+<li>Timestamp - recent addition, it has the same value as endTime</li>
+<li>SessionID - recent addition, has no special meaning currently</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Typescript</label><label for="__tabbed_1_2">Go</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">PredecessorMatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">winningTeam</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">gameDuration</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">gameMode</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">matchID</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">startTime</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">endTime</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">matchEndReason</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">playerData</span><span class="o">:</span><span class="w"> </span><span class="kt">playerData</span><span class="p">[]</span>
+<span class="w">  </span><span class="nx">heroKills</span><span class="o">:</span><span class="w"> </span><span class="kt">heroKill</span><span class="p">[]</span>
+<span class="w">  </span><span class="nx">structureDestructions</span><span class="o">:</span><span class="w"> </span><span class="kt">structureDestruction</span><span class="p">[]</span>
+<span class="w">  </span><span class="nx">objectiveKills</span><span class="o">:</span><span class="w"> </span><span class="kt">objectiveKill</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">playerData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">playerID</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">teamID</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">heroName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">roleName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">playerName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">minionData</span><span class="o">:</span><span class="w"> </span><span class="kt">minionData</span>
+<span class="w">  </span><span class="nx">combatData</span><span class="o">:</span><span class="w"> </span><span class="kt">combatData</span>
+<span class="w">  </span><span class="nx">damageHealData</span><span class="o">:</span><span class="w"> </span><span class="kt">damageHealData</span>
+<span class="w">  </span><span class="nx">wardsData</span><span class="o">:</span><span class="w"> </span><span class="kt">wardsData</span>
+<span class="w">  </span><span class="nx">incomeData</span><span class="o">:</span><span class="w"> </span><span class="kt">incomeData</span>
+<span class="w">  </span><span class="nx">abilityData</span><span class="o">:</span><span class="w"> </span><span class="kt">abilityData</span><span class="p">[]</span>
+<span class="w">  </span><span class="nx">inventoryData</span><span class="o">:</span><span class="w"> </span><span class="kt">inventoryData</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">minionData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">minionsKilled</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">laneMinionsKilled</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">neutralMinionsKilled</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">neutralMinionsTeamJungle</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">neutralMinionsEnemyJungle</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">combatData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">kills</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">deaths</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">assists</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">largestKillingSpree</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">largestMultiKill</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">damageHealData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">totalDamageDealt</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">physicalDamageDealt</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">magicalDamageDealt</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">trueDamageDealt</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">largestCriticalStrike</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">totalDamageDealtToHeroes</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">physicalDamageDealtToHeroes</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">magicalDamageDealtToHeroes</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">trueDamageDealtToHeroes</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">totalDamageDealtToStructures</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">totalDamageDealtToObjectives</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">totalDamageTaken</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">physicalDamageTaken</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">magicalDamageTaken</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">trueDamageTaken</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">totalDamageTakenFromHeroes</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">physicalDamageTakenFromHeroes</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">magicalDamageTakenFromHeroes</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">trueDamageTakenFromHeroes</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">totalDamageMitigated</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">totalHealingDone</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">itemHealingDone</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">crestHealingDone</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">utilityHealingDone</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">totalShieldingReceived</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">wardsData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">wardsPlaced</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">wardsDestroyed</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">wardDestructions</span><span class="o">:</span><span class="w"> </span><span class="kt">wardData</span><span class="p">[]</span>
+<span class="w">  </span><span class="nx">wardPlacements</span><span class="o">:</span><span class="w"> </span><span class="kt">wardData</span><span class="p">[]</span>
+<span class="p">}</span>
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">wardData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">typeID</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">gameTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="kt">location</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">z</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">incomeData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">goldEarned</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">goldSpent</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">goldEarnedAtInterval</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">[]</span>
+<span class="w">  </span><span class="nx">transactions</span><span class="o">:</span><span class="w"> </span><span class="kt">transaction</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">itemID</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">transactionType</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">gameTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">abilityData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">abilityInputTag</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">gameTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">inventoryData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">itemSlot</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">itemID</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">heroKill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">killedPlayerID</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">killedHeroName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">killerPlayerID</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">killerHeroName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">killerEntityType</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">isFirstBlood</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span>
+<span class="w">  </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="kt">location</span>
+<span class="w">  </span><span class="nx">gameTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">structureDestruction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">destructionPlayerID</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">destructionHeroName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">structureEntityType</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="kt">location</span>
+<span class="w">  </span><span class="nx">teamID</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="w">  </span><span class="nx">gameTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">objectiveKill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">killedEntityType</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">killerPlayerID</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">killerHeroName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">  </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="kt">location</span>
+<span class="w">  </span><span class="nx">gameTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">PredecessorMatch</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">WinningTeam</span><span class="w">           </span><span class="kt">int64</span><span class="w">                   </span><span class="s">`json:&quot;winningTeam&quot;`</span>
+<span class="w">  </span><span class="nx">GameDuration</span><span class="w">          </span><span class="kt">int64</span><span class="w">                   </span><span class="s">`json:&quot;gameDuration,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">GameMode</span><span class="w">              </span><span class="kt">string</span><span class="w">                  </span><span class="s">`json:&quot;gameMode,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">MatchID</span><span class="w">               </span><span class="kt">string</span><span class="w">                  </span><span class="s">`json:&quot;matchID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Region</span><span class="w">                </span><span class="kt">string</span><span class="w">                  </span><span class="s">`json:&quot;region,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">StartTime</span><span class="w">             </span><span class="kt">string</span><span class="w">                  </span><span class="s">`json:&quot;startTime,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">EndTime</span><span class="w">               </span><span class="kt">string</span><span class="w">                  </span><span class="s">`json:&quot;endTime,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">MatchEndReason</span><span class="w">        </span><span class="kt">string</span><span class="w">                  </span><span class="s">`json:&quot;matchEndReason,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">PlayerData</span><span class="w">            </span><span class="p">[]</span><span class="o">*</span><span class="nx">PlayerData</span><span class="w">           </span><span class="s">`json:&quot;playerData,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">HeroKills</span><span class="w">             </span><span class="p">[]</span><span class="o">*</span><span class="nx">HeroKill</span><span class="w">             </span><span class="s">`json:&quot;heroKills,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">StructureDestructions</span><span class="w"> </span><span class="p">[]</span><span class="o">*</span><span class="nx">StructureDestruction</span><span class="w"> </span><span class="s">`json:&quot;structureDestructions,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">ObjectiveKills</span><span class="w">        </span><span class="p">[]</span><span class="o">*</span><span class="nx">ObjectiveKill</span><span class="w">        </span><span class="s">`json:&quot;objectiveKills,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">PlayerData</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">PlayerID</span><span class="w">       </span><span class="kt">string</span><span class="w">           </span><span class="s">`json:&quot;playerID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TeamID</span><span class="w">         </span><span class="kt">int64</span><span class="w">            </span><span class="s">`json:&quot;teamID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">HeroName</span><span class="w">       </span><span class="kt">string</span><span class="w">           </span><span class="s">`json:&quot;heroName,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">RoleName</span><span class="w">       </span><span class="kt">string</span><span class="w">           </span><span class="s">`json:&quot;roleName,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">PlayerName</span><span class="w">     </span><span class="kt">string</span><span class="w">           </span><span class="s">`json:&quot;playerName,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">MinionData</span><span class="w">     </span><span class="o">*</span><span class="nx">MinionData</span><span class="w">      </span><span class="s">`json:&quot;minionData,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">CombatData</span><span class="w">     </span><span class="o">*</span><span class="nx">CombatData</span><span class="w">      </span><span class="s">`json:&quot;combatData,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">DamageHealData</span><span class="w"> </span><span class="o">*</span><span class="nx">DamageHealData</span><span class="w">  </span><span class="s">`json:&quot;damageHealData,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">WardsData</span><span class="w">      </span><span class="o">*</span><span class="nx">WardsData</span><span class="w">       </span><span class="s">`json:&quot;wardsData,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">IncomeData</span><span class="w">     </span><span class="o">*</span><span class="nx">IncomeData</span><span class="w">      </span><span class="s">`json:&quot;incomeData,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">AbilityData</span><span class="w">    </span><span class="p">[]</span><span class="o">*</span><span class="nx">AbilityData</span><span class="w">   </span><span class="s">`json:&quot;abilityData,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">InventoryData</span><span class="w">  </span><span class="p">[]</span><span class="o">*</span><span class="nx">InventoryData</span><span class="w"> </span><span class="s">`json:&quot;inventoryData,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">MinionData</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">MinionsKilled</span><span class="w">             </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;minionsKilled,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">LaneMinionsKilled</span><span class="w">         </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;laneMinionsKilled,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">NeutralMinionsKilled</span><span class="w">      </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;neutralMinionsKilled,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">NeutralMinionsTeamJungle</span><span class="w">  </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;neutralMinionsTeamJungle,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">NeutralMinionsEnemyJungle</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;neutralMinionsEnemyJungle,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">CombatData</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">Kills</span><span class="w">               </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;kills,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Deaths</span><span class="w">              </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;deaths,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Assists</span><span class="w">             </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;assists,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">LargestKillingSpree</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;largestKillingSpree,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">LargestMultiKill</span><span class="w">    </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;largestMultiKill,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">DamageHealData</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">TotalDamageDealt</span><span class="w">              </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;totalDamageDealt,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">PhysicalDamageDealt</span><span class="w">           </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;physicalDamageDealt,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">MagicalDamageDealt</span><span class="w">            </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;magicalDamageDealt,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TrueDamageDealt</span><span class="w">               </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;trueDamageDealt,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">LargestCriticalStrike</span><span class="w">         </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;largestCriticalStrike,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TotalDamageDealtToHeroes</span><span class="w">      </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;totalDamageDealtToHeroes,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">PhysicalDamageDealtToHeroes</span><span class="w">   </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;physicalDamageDealtToHeroes,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">MagicalDamageDealtToHeroes</span><span class="w">    </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;magicalDamageDealtToHeroes,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TrueDamageDealtToHeroes</span><span class="w">       </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;trueDamageDealtToHeroes,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TotalDamageDealtToStructures</span><span class="w">  </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;totalDamageDealtToStructures,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TotalDamageDealtToObjectives</span><span class="w">  </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;totalDamageDealtToObjectives,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TotalDamageTaken</span><span class="w">              </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;totalDamageTaken,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">PhysicalDamageTaken</span><span class="w">           </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;physicalDamageTaken,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">MagicalDamageTaken</span><span class="w">            </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;magicalDamageTaken,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TrueDamageTaken</span><span class="w">               </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;trueDamageTaken,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TotalDamageTakenFromHeroes</span><span class="w">    </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;totalDamageTakenFromHeroes,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">PhysicalDamageTakenFromHeroes</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;physicalDamageTakenFromHeroes,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">MagicalDamageTakenFromHeroes</span><span class="w">  </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;magicalDamageTakenFromHeroes,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TrueDamageTakenFromHeroes</span><span class="w">     </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;trueDamageTakenFromHeroes,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TotalDamageMitigated</span><span class="w">          </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;totalDamageMitigated,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TotalHealingDone</span><span class="w">              </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;totalHealingDone,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">ItemHealingDone</span><span class="w">               </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;itemHealingDone,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">CrestHealingDone</span><span class="w">              </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;crestHealingDone,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">UtilityHealingDone</span><span class="w">            </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;utilityHealingDone,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TotalShieldingReceived</span><span class="w">        </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;totalShieldingReceived,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">WardsData</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">WardsPlaced</span><span class="w">      </span><span class="kt">int64</span><span class="w">       </span><span class="s">`json:&quot;wardsPlaced,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">WardsDestroyed</span><span class="w">   </span><span class="kt">int64</span><span class="w">       </span><span class="s">`json:&quot;wardsDestroyed,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">WardDestructions</span><span class="w"> </span><span class="p">[]</span><span class="o">*</span><span class="nx">WardData</span><span class="w"> </span><span class="s">`json:&quot;wardDestructions,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">WardPlacements</span><span class="w">   </span><span class="p">[]</span><span class="o">*</span><span class="nx">WardData</span><span class="w"> </span><span class="s">`json:&quot;wardPlacements,omitempty&quot;`</span>
+<span class="p">}</span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">WardData</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">TypeID</span><span class="w">   </span><span class="kt">int64</span><span class="w">     </span><span class="s">`json:&quot;typeID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">GameTime</span><span class="w"> </span><span class="kt">int64</span><span class="w">     </span><span class="s">`json:&quot;gameTime,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Location</span><span class="w"> </span><span class="o">*</span><span class="nx">Location</span><span class="w"> </span><span class="s">`json:&quot;location,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">Location</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">X</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="s">`json:&quot;x,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Y</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="s">`json:&quot;y,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Z</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="s">`json:&quot;z,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">IncomeData</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">GoldEarned</span><span class="w">           </span><span class="kt">int64</span><span class="w">          </span><span class="s">`json:&quot;goldEarned,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">GoldSpent</span><span class="w">            </span><span class="kt">int64</span><span class="w">          </span><span class="s">`json:&quot;goldSpent,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">GoldEarnedAtInterval</span><span class="w"> </span><span class="p">[]</span><span class="kt">int64</span><span class="w">        </span><span class="s">`json:&quot;goldEarnedAtInterval,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Transactions</span><span class="w">         </span><span class="p">[]</span><span class="o">*</span><span class="nx">Transaction</span><span class="w"> </span><span class="s">`json:&quot;transactions,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">Transaction</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">ItemID</span><span class="w">          </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;itemID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TransactionType</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;transactionType,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">GameTime</span><span class="w">        </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;gameTime,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">AbilityData</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">AbilityInputTag</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;abilityInputTag,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">GameTime</span><span class="w">        </span><span class="kt">int64</span><span class="w">  </span><span class="s">`json:&quot;gameTime,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">InventoryData</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">ItemSlot</span><span class="w"> </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;itemSlot,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">ItemID</span><span class="w">   </span><span class="kt">int64</span><span class="w"> </span><span class="s">`json:&quot;itemID,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">HeroKill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">KilledPlayerID</span><span class="w">   </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;killedPlayerID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">KilledHeroName</span><span class="w">   </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;killedHeroName,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">KillerPlayerID</span><span class="w">   </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;killerPlayerID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">KillerHeroName</span><span class="w">   </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;killerHeroName,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">KillerEntityType</span><span class="w"> </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;killerEntityType,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">IsFirstBlood</span><span class="w">     </span><span class="kt">bool</span><span class="w">      </span><span class="s">`json:&quot;isFirstBlood,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Location</span><span class="w">         </span><span class="o">*</span><span class="nx">Location</span><span class="w"> </span><span class="s">`json:&quot;location,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">GameTime</span><span class="w">         </span><span class="kt">int64</span><span class="w">     </span><span class="s">`json:&quot;gameTime,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">StructureDestruction</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">DestructionPlayerID</span><span class="w"> </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;destructionPlayerID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">DestructionHeroName</span><span class="w"> </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;destructionHeroName,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">StructureEntityType</span><span class="w"> </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;structureEntityType,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Location</span><span class="w">            </span><span class="o">*</span><span class="nx">Location</span><span class="w"> </span><span class="s">`json:&quot;location,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">TeamID</span><span class="w">              </span><span class="kt">int64</span><span class="w">     </span><span class="s">`json:&quot;teamID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">GameTime</span><span class="w">            </span><span class="kt">int64</span><span class="w">     </span><span class="s">`json:&quot;gameTime,omitempty&quot;`</span>
+<span class="p">}</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">ObjectiveKill</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">KilledEntityType</span><span class="w"> </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;killedEntityType,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">KillerPlayerID</span><span class="w">   </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;killerPlayerID,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">KillerHeroName</span><span class="w">   </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&quot;killerHeroName,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">Location</span><span class="w">         </span><span class="o">*</span><span class="nx">Location</span><span class="w"> </span><span class="s">`json:&quot;location,omitempty&quot;`</span>
+<span class="w">  </span><span class="nx">GameTime</span><span class="w">         </span><span class="kt">int64</span><span class="w">     </span><span class="s">`json:&quot;gameTime,omitempty&quot;`</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.instant", "navigation.sections"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
