@@ -1,0 +1,29 @@
+site_name: Predecessor API
+site_url: https://predecessor-api.github.io/docs
+repo_name: predecessor-api/docs
+repo_url: https://github.com/predecessor-api/docs
+theme:
+  name: material
+  logo: img/favicon.ico
+  favicon: img/favicon.ico
+  features:
+    - content.code.copy
+    - navigation.instant
+    # - navigation.tabs
+    - navigation.sections
+  palette:
+    # Palette toggle for dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+nav:
+  - Home: index.md
