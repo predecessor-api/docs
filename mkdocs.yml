@@ -27,3 +27,20 @@ theme:
 
 nav:
   - Home: index.md
+  - Endpoints:
+      - Matches:
+          - Matches by Epoch: endpoints/matches/by-epoch.md
+          - Match by ID: endpoints/matches/by-id.md
+          - Matches by Player ID: endpoints/matches/by-player-id.md
+      - Items:
+          - Item Mapping: endpoints/items/mapping.md
+          - Item Information: endpoints/items/information.md
+      - Heroes:
+          - Hero by Codename: endpoints/heroes/by-codename.md
+  - Models:
+      - Match: models/match/index.md
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
